@@ -1,10 +1,11 @@
-import LoginPage from "./pages/LoginPage";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-800">
-        <LoginPage />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

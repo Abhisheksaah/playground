@@ -1,0 +1,98 @@
+/* ========== ARC REACTOR - Elegant & Subtle ========== */
+.arc-reactor {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.reactor-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: reactor-glow 3s ease-in-out infinite;
+}
+
+/* Outer ring - subtle glow */
+.reactor-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a4a4a 0%, #2d2d2d 50%, #3d3d3d 100%);
+  border: 2px solid #e74c3c;
+  box-shadow: 
+    0 0 8px rgba(231, 76, 60, 0.4),
+    0 0 16px rgba(231, 76, 60, 0.2),
+    inset 0 0 6px rgba(231, 76, 60, 0.1);
+}
+
+/* Inner ring area */
+.reactor-inner {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2d2d2d 0%, #1a1a1a 100%);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+/* Coil segments - subtle red */
+.reactor-coil {
+  position: absolute;
+  width: 4px;
+  height: 10px;
+  background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+  border-radius: 2px;
+  left: 50%;
+  top: 2px;
+  transform-origin: 50% 200%;
+  box-shadow: 0 0 4px rgba(231, 76, 60, 0.5);
+}
+
+.coil-1 { transform: translateX(-50%) rotate(0deg); }
+.coil-2 { transform: translateX(-50%) rotate(45deg); }
+.coil-3 { transform: translateX(-50%) rotate(90deg); }
+.coil-4 { transform: translateX(-50%) rotate(135deg); }
+.coil-5 { transform: translateX(-50%) rotate(180deg); }
+.coil-6 { transform: translateX(-50%) rotate(225deg); }
+.coil-7 { transform: translateX(-50%) rotate(270deg); }
+.coil-8 { transform: translateX(-50%) rotate(315deg); }
+
+/* Core - soft red glow */
+.reactor-core {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #f8b4b4 40%, #e74c3c 80%);
+  box-shadow: 
+    0 0 6px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(231, 76, 60, 0.5),
+    0 0 20px rgba(231, 76, 60, 0.3);
+  animation: core-pulse 2.5s ease-in-out infinite;
+}
+
+.core-inner {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #fce4e4 60%);
+}
+
+/* Animations - smoother */
+@keyframes reactor-glow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 4px rgba(231, 76, 60, 0.3));
+  }
+  50% {
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(231, 76, 60, 0.5));
+  }
+}
+
+@keyframes core-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.95;
+  }
+}
